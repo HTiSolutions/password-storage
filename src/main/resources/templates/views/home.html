@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h1>Password Demo: Home Page</h1>
+<table class="table table-sm">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Nickname</th>
+        <th>Password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="userEntry : ${userEntries}">
+        <tr>
+            <td th:text="${userEntry.getForename()}"></td>
+            <td th:text="${userEntry.getSurname()}"></td>
+            <td th:text="${userEntry.getNickname()}"></td>
+            <td th:text="${userEntry.getHashedPassword()}"></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>
